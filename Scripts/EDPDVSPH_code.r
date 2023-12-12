@@ -444,7 +444,7 @@ for (x in PD_shuff_LIST){
             geom_point()+
             stat_smooth(method="lm", formula = y ~ poly(x,k,raw=TRUE),linewidth=1)+theme_light()+
             xlab('Week')+
-            ylab('Phylogenetic Diversity')
+            ylab('Phylogenetic Diversity')+scale_x_continuous(breaks = round(seq(min(y$Week), max(y$Week), by = 1),1))
             name=paste(d,"Polynomial_regression.pdf",sep="_")
             ggsave(
                 filename=name,
